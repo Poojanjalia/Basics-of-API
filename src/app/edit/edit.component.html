@@ -1,0 +1,37 @@
+<h1>Edit Data</h1>
+<form (ngSubmit)="done(myForm.value)" [formGroup]="myForm">
+    <label for="Id">ID:</label>
+    <br>
+    <input type="text" id="Id" formControlName="Id" placeholder="Enter ID">
+    <br>
+    <label for="First_name">First Name:</label>
+    <br>
+    <input type="text" id="First_name" formControlName="First_name" placeholder="Enter Firstname">
+    <br>
+    <label for="Last_name">Last Name:</label>
+    <br>
+    <input type="text" id="Last_name" formControlName="Last_name" placeholder="Enter Lastname">
+    <br>
+    <label for="email">Email:</label>
+    <br>
+    <input type="email" id="email" formControlName="email" placeholder="Enter Email">
+    <br>
+    <label for="Subject">Subject:</label>
+    <br>
+    <input type="text" id="subject" formControlName="subject" placeholder="Enter Subject">
+    <br>
+    <label for="Experience">Experience:</label>
+    <br>
+    <input type="int" id="experience" formControlName="experience" placeholder="Enter Experience">
+    <br>
+    <label for="Phone No.">Phone No.:</label>
+    <br>
+    <input type="int" id="phone" formControlName="phone" placeholder="Enter Phone No">
+    <br>
+    <label for="Institute">Institute:</label>
+    <br>
+    <input type="text" id="institute" formControlName="institute" placeholder="Enter Institute">
+    <br><br>
+    <button>Done</button>
+</form>
+<button routerLink="/table" type="submit">Back to table</button>

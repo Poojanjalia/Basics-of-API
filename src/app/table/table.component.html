@@ -1,0 +1,31 @@
+<div *ngIf="tableData">
+    <h2>Table Data</h2>
+    <table border="5" [cellPadding]="5" [cellSpacing]="5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First_name</th>
+                <th>Last_name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Experience</th>
+                <th>Institute</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Data of tableData">
+                <td>{{Data.Id }}</td>
+                <td>{{Data.First_name}}</td>
+                <td>{{Data.Last_name}}</td>
+                <td>{{Data.Email}}</td>
+                <td>{{Data.subject}}</td>
+                <td>{{Data.experience}}</td>
+                <td>{{Data.institute}}</td>
+                <td><button (click)="delete(Data.Id)" ></button>Delete</td>
+            </tr>
+        </tbody>
+    </table>
+        <button routerLink="/forms">Add data</button>
+        <button routerLink="/edit">Edit</button>
+</div>
+<button routerLink="/kendo">Kendo</button>

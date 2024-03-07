@@ -1,0 +1,27 @@
+<h3>KENDO CRUD</h3>
+<kendo-grid [filterable]="true" 
+    [kendoGridReactiveEditing]="createFormGroup" 
+    [kendoGridBinding]="tableData" 
+    [data]="tableData" [sortable]="true">
+    
+    <ng-template kendoGridToolbarTemplate>
+        <button kendoGridAddCommand>Add</button>
+    </ng-template>
+
+    <kendo-grid-column field="Id" title="ID"></kendo-grid-column>
+    <kendo-grid-column field="First_name" title="First Name"></kendo-grid-column>
+    <kendo-grid-column field="Last_name" title="Last Name"></kendo-grid-column>
+    <kendo-grid-column field="Email" title="Email"></kendo-grid-column>
+    <kendo-grid-column field="subject" title="Subject"></kendo-grid-column>
+    <kendo-grid-column field="experience" title="Experience"></kendo-grid-column>
+    <kendo-grid-column field="institute" title="Institute"></kendo-grid-column>
+    <kendo-grid-command-column title="Action">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <button kendoGridEditCommand >Edit</button>
+            <button kendoGridRemoveCommand (click)="deleteUser(dataItem.Id)">Delete</button>
+            <button kendoGridSaveCommand [disabled]="formGroup.invalid"  (click)="editUser(dataItem)">Update</button>
+            <button kendoGridSaveCommand [disabled]="formGroup.invalid" (click)="onSubmit(dataItem)">Add</button> 
+            <button kendoGridCancelCommand>Cancel</button>
+        </ng-template>
+    </kendo-grid-command-column>
+</kendo-grid>
